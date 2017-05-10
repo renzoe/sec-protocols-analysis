@@ -1,0 +1,29 @@
+# LATe Authenticated Time Synch Protocol
+#
+# Update when Paper Ready
+
+
+const Fresh: Function;
+usertype TimeStamp;
+
+protocol LATe(I,R)
+{
+    role I
+    {
+        fresh Na : Nonce;
+        var T : TimeStamp;
+
+	send_1(I,R, Na );
+	#ni claims https://profs.basu.ac.ir/y-seifi/upload_file/cas_cremers_phd_thesis(pre_co_prj.2718.727).pdf
+    }
+
+    role R
+    {
+        var Na : Nonce;
+        fresh T : TimeStamp;
+
+	recv_1(I,R, Na );
+
+    }
+
+}
